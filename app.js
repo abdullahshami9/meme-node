@@ -9,29 +9,33 @@ const oauthRoutes = require('./routes/oauthRoutes');
 const secureRoutes = require('./routes/secureRoutes');
 
 const app = express();
+require('./oauth');
 
 // Include OAuth2 server configuration and routes
-app.use('/oauth', oauthRoutes);
+// app.use('/oauth', oauthRoutes);
 
 // Use route middleware to protect secure routes
-app.use('/', secureRoutes);
+// app.use('/', secureRoutes);
 
 
 // app.use('/', routes);  This won't work
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connected to the database.');
-    app.listen(PORT, () => {
-      console.log(`OAuth 2.0 server is running on port ${PORT}`);
-    });
-  })
-  .catch((error) => {
-    console.error('Error connecting to the database:', error);
-  });
+// sequelize
+//   .authenticate()
+//   .then(() => {
+//     console.log('Connected to the database.');
+//     app.listen(PORT, () => {
+//       console.log(`OAuth 2.0 server is running on port ${PORT}`);
+//     });
+//   })
+//   .catch((error) => {
+//     console.error('Error connecting to the database:', error);
+//   });
+
+
+
 
 
 
